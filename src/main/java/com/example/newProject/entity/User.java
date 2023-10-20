@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+//Because of this Entity annotation, it will create a table User and also the id, name and the address fields
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
