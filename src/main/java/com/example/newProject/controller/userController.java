@@ -24,17 +24,17 @@ public class userController {
         return "Getting User info";
     }
 
-    @GetMapping(value = "/newUser")
+    @PostMapping(value = "/newUser")
     public userDTO newUser(@RequestBody userDTO UserDto){
-       return UserService.saveUser(UserDto);
+        return UserService.saveUser(UserDto);
     }
 
-    @GetMapping(value = "/deleteUser")
+    @DeleteMapping(value = "/deleteUser")
     public String deleteUser(){
         return "User Deleted";
     }
 
-    @GetMapping(value = "/updateUser")
+    @PutMapping(value = "/updateUser")
     public String updateUser(){
         return "User Updated";
     }
