@@ -9,6 +9,8 @@ import com.example.newProject.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @CrossOrigin
 @RestController
@@ -19,9 +21,9 @@ public class userController {
     @Autowired
     private userService UserService;
 
-    @GetMapping(value = "/getUser")
-    public String getUser(){
-        return "Getting User info";
+    @GetMapping(value = "/getUsers")
+    public List<userDTO> getUser(){
+        return UserService.getAllUsers();
     }
 
     @PostMapping(value = "/newUser")
