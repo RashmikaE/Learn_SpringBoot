@@ -37,7 +37,8 @@ public class userController {
     }
 
     @PutMapping(value = "/updateUser")
-    public String updateUser(){
-        return "User Updated";
+    public userDTO updateUser(@RequestBody userDTO userDTO){
+        return UserService.updateUser(userDTO);
+
     }
 }
