@@ -31,14 +31,13 @@ public class userController {
         return UserService.saveUser(UserDto);
     }
 
-    @DeleteMapping(value = "/deleteUser")
-    public String deleteUser(){
-        return "User Deleted";
-    }
-
     @PutMapping(value = "/updateUser")
     public userDTO updateUser(@RequestBody userDTO userDTO){
         return UserService.updateUser(userDTO);
+    }
 
+    @DeleteMapping(value = "/deleteUser")
+    public boolean deleteUser(@RequestBody userDTO userDTO){
+        return UserService.deleteUser(userDTO);
     }
 }
